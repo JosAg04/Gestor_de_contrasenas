@@ -10,3 +10,4 @@ symbols = string.punctuation
 chars = lower + upper + num + symbols
 
 temp = random.sample(chars, 18)
+print("".join(temp))
