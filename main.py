@@ -32,22 +32,24 @@ def iniciar_programa():
     while ejecucion:
         
         menu()
+        
         try:
             
             opcion = int(input('\nElige una opcion: '))
             
         except (ValueError, KeyboardInterrupt):
-            return '\nDatos invalidos, prueba de nuevo.'
+            print('\nDatos invalidos, prueba de nuevo.')
+            continue
         
-        if opcion != 1:
+        if opcion == 1:
+            print('\nPassword:')
+            generador_contrasenas()
+            
+        elif opcion == 2:
             print("\nSaliendo del programa...")
             ejecucion = False
             
-        elif opcion == 1:
-            print('\nPassword:')
-            generador_contrasenas()
-        
         else:
-            print("\nOpcion invalida")
+            print("\nOpcion invalida, intenta con 1 o 2")
             
 iniciar_programa()
