@@ -14,8 +14,6 @@ def menu():
         ======================
           ''')
 
-print('Password:')
-
 def generador_contrasenas():
     
     lower = string.ascii_lowercase
@@ -27,4 +25,30 @@ def generador_contrasenas():
     temp = random.sample(chars, 25)
     print("".join(temp))
     
-generador_contrasenas()
+def iniciar_programa():
+    
+    ejecucion = True
+    
+    while ejecucion:
+        
+        menu()
+        try:
+            
+            opcion = int(input('\nElige una opcion: '))
+            
+        except (ValueError, KeyboardInterrupt):
+            return '\nDatos invalidos, prueba de nuevo.'
+        
+        if opcion != 1:
+            print("\nSaliendo del programa...")
+            ejecucion = False
+            
+        elif opcion == 1:
+            print('\nPassword:')
+            generador_contrasenas()
+            break
+        
+        else:
+            print("\nOpcion invalida")
+            
+iniciar_programa()
