@@ -1,6 +1,19 @@
 import random
 import string
 
+# Menu de inicio
+
+def menu():
+    
+    print('''
+        ======================
+             MENU INICIAL
+        ======================
+          1-Crear contrasena
+          2-Salir
+        ======================
+          ''')
+
 print('Password:')
 
 def generador_contrasenas():
