@@ -1,7 +1,18 @@
 import random
 import string
 
-print('Password:')
+# Menu de inicio
+
+def menu():
+    
+    print('''
+        ======================
+             MENU INICIAL
+        ======================
+          1-Crear contrasena
+          2-Salir
+        ======================
+          ''')
 
 def generador_contrasenas():
     
@@ -14,4 +25,29 @@ def generador_contrasenas():
     temp = random.sample(chars, 25)
     print("".join(temp))
     
-generador_contrasenas()
+def iniciar_programa():
+    
+    ejecucion = True
+    
+    while ejecucion:
+        
+        menu()
+        try:
+            
+            opcion = int(input('\nElige una opcion: '))
+            
+        except (ValueError, KeyboardInterrupt):
+            return '\nDatos invalidos, prueba de nuevo.'
+        
+        if opcion != 1:
+            print("\nSaliendo del programa...")
+            ejecucion = False
+            
+        elif opcion == 1:
+            print('\nPassword:')
+            generador_contrasenas()
+        
+        else:
+            print("\nOpcion invalida")
+            
+iniciar_programa()
