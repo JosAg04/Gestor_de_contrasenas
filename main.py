@@ -46,7 +46,6 @@ def iniciar_programa():
         elif opcion == 1:
             print('\nPassword:')
             generador_contrasenas()
-            break
         
         else:
             print("\nOpcion invalida")
